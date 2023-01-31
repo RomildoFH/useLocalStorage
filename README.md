@@ -4,7 +4,7 @@
 Para o exercício proposto, você deverá iniciar uma aplicação react do zero e ela deverá atender aos seguintes requisitos:
 
 1.  Possuir um campo onde será possível inserir o nome de um pet;
-2.  Possuir um campo onde será possível inserir a especíe do pet;
+2.  Possuir um campo onde será possível inserir a especie do pet;
 3.  Possuir um campo onde será possível inserir a raça do pet;
 4.  Possuir um campo onde será possível inserir a idade do pet em anos (Apenas números);
 5.  Você deverá realizar toda a gestão de estados da aplicação utilizando uma custom hook;
@@ -15,7 +15,7 @@ Para o exercício proposto, você deverá iniciar uma aplicação react do zero 
 
 #### Passo 1 - Criar ma aplicação react
 
-Para criar uma nova aplicação react, você deve utilizar o comando abaixo:
+Para criar uma aplicação react, você deve utilizar o comando abaixo:
 ```
 npx create-react-app myapp
 ```
@@ -60,7 +60,7 @@ export default App;
 
 ```
 
-2.  Possuir um campo onde será possível inserir a especíe do pet;
+2.  Possuir um campo onde será possível inserir a especie do pet;
 
 ```
 import './App.css';
@@ -170,7 +170,7 @@ const useLocalStorage = (initialState) => {
 export default useLocalStorage;
 ```
 
-#### Paso 2 - Agora que você criou a custom hook, você precisará importar ela no _App.js_ e realizar a vínculação dela com os campos de inputs, para realizar a vínculação com o input de nome, o código ficará mais ou menos assim:
+#### Paso 2 - Agora que você criou a custom hook, você precisará importar ela no _App.js_ e realizar a vínculação dela com os campos de inputs, para realizar a vinculação com o input de nome, o código ficará mais ou menos assim:
 ```
 import React from 'react';
 import useLocalStorage from './hooks/useLocalStorage';
@@ -207,9 +207,9 @@ function App() {
 export default App;
 
 ```
-Observe que foi pasado como _initialState_ (parâmetro) para a nossa hook uma string vazia, evitando que o estado da aplicação seja considerado _undefined_ e possa interferir nos passos mais adiante.
+Observe que foi passado como _initialState_ (parâmetro) para a nossa hook uma string vazia, evitando que o estado da aplicação seja considerado _undefined_ e possa interferir nos passos mais adiante.
 
-#### Passo 3 - Agora podemos replicar o processo para os outros campo de inputs:
+#### Passo 3 - Agora podemos replicar o processo para os outros campos de inputs:
 
 ```
 import React from 'react';
@@ -297,7 +297,7 @@ const useLocalStorage = (key, initialState) => {
 
 export default useLocalStorage;
 ```
-Com isso a gente garante que, ao carregar nossa página, caso exista algum valor salvo previamente no nosso _localStorage_ ele será mantido e salvo no estado ao invez de ser substituindo, por exemplo, por uma string vazia. Mas observe que ainda não estamos salvando nada no _localStorage_ apenas realizando a leitura dele.
+Com isso a gente garante que, ao carregar nossa página, caso exista algum valor salvo previamente no nosso _localStorage_ ele será mantido e salvo no estado ao invés de ser substituindo, por exemplo, por uma string vazia. Mas observe que ainda não estamos salvando nada no _localStorage_ apenas realizando a leitura dele.
 
 #### Passo 4 - Agora precisamos garantir que toda vez que um input for atualizado, seu valor no _localStorage_ também seja.
 Aqui podemos utilizar uma hook do react, que garante que toda vez que um estado for atualizado ela execute algo. Sabe de qual estamos falando? Isso mesmo é a _useEffect_.
@@ -325,9 +325,9 @@ export default useLocalStorage;
 ```
 Então, vamos entender um pouco do que está acontecendo até aqui:
   1. Ao criar estados utilizando nossa _custom hook_ la no nosso _App.js_, nós passamos para ela como argumento uma _key_ e um valor inicial;
-  2. Esses estados por sua vez, são gerados dentro das nossas hook que como parâmetro inicial, está recebendo uma callback que resgata inforamções do _localStorage_.
+  2. Esses estados, por sua vez, são gerados dentro das nossas hook que como parâmetro inicial, está recebendo uma callback que resgata inforamções do _localStorage_.
   3. Quando o _localStorage_ não possúi informações, ela retorna uma string vazia dentro de uma key (que nomeamos lá no _App.js_);
-  4. Depois disto, quando qualquer alteração é realizada nos campos de input, através do _onChange_ do mesmo campo, ele assiona uma _setState_ correspondente a aquela utilizada para criar seu estado, fazendo sua alteração para o novo valor.
+  4. Depois disto, quando qualquer alteração é realizada nos campos de input, através do _onChange_ do mesmo campo, ele assiona uma _setState_ correspondente àquela utilizada para criar seu estado, fazendo sua alteração para o novo valor.
   5. A _useEffect_ reconhece através do array de dependências que o estado sofreu alterações e com isto faz a leitura do novo estado e o salva no _localStorage_ na chave (key) corrrespondente.
 
 #### Passo 5 - Agora só falta a gente alterar o arquivo _App.js_ para de fato passar as chaves para nossa hook:
@@ -371,4 +371,4 @@ function App() {
 export default App;
 
 ```
-  Agora pronto, nossa aplicação está funcionando perfeitamente. Você pode aproveitar para elaborar um _CSS_ bacana e divulgar em suas redes sóciais que agora você além de dominar as _hooks_ do React, você também é mestre na elaboração de suas próprias _custom hooks_.
+  Agora pronto, nossa aplicação está funcionando perfeitamente. Você pode aproveitar para elaborar um _CSS_ bacana e divulgar em suas redes sociais que agora você além de dominar as _hooks_ do React, você também é mestre na elaboração de suas próprias _custom hooks_.
