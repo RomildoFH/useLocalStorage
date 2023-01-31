@@ -1,70 +1,374 @@
-# Getting Started with Create React App
+# Gabarito - Vamos praticar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Para o exercício proposto, você deverá iniciar uma aplicação react do zero e ela deverá atender aos seguintes requisitos:
 
-In the project directory, you can run:
+1.  Possuir um campo onde será possível inserir o nome de um pet;
+2.  Possuir um campo onde será possível inserir a especíe do pet;
+3.  Possuir um campo onde será possível inserir a raça do pet;
+4.  Possuir um campo onde será possível inserir a idade do pet em anos (Apenas números);
+5.  Você deverá realizar toda a gestão de estados da aplicação utilizando uma custom hook;
+6.  Ao recarregar a página, todas as informações preenchidas até o momento deverão aparecer na tela.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+----
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Passo 1 - Criar ma aplicação react
 
-### `npm test`
+Para criar uma nova aplicação react, você deve utilizar o comando abaixo:
+```
+npx create-react-app myapp
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Após a finalização do comando, vamos precisar eliminar aquilo que não vamos utilizar dentro do arquivo _APP.js_:
 
-### `npm run build`
+```
+import './App.css';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+function App() {
+  return (
+    <div className="App">
+     <header>Meu cadastro de pets</header>
+    </div>
+  );
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default App;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+1.  Possuir um campo onde será possível inserir o nome de um pet;
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+import './App.css';
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+function App() {
+  return (
+    <div className="App">
+     <header>Meu cadastro de pets</header>
+     <form>
+      <label>
+        Nome do seu Pet
+        <input type="text" />
+      </label>
+     </form>
+    </div>
+  );
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+export default App;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
+2.  Possuir um campo onde será possível inserir a especíe do pet;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+import './App.css';
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+function App() {
+  return (
+    <div className="App">
+     <header>Meu cadastro de pets</header>
+     <form>
+      <label>
+        Nome do seu Pet
+        <input type="text" />
+      </label>
+      <label>
+        Especie
+        <input type="text" />
+      </label>
+     </form>
+    </div>
+  );
+}
 
-### Code Splitting
+export default App;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
 
-### Analyzing the Bundle Size
+3.  Possuir um campo onde será possível inserir a raça do pet;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+import './App.css';
 
-### Making a Progressive Web App
+function App() {
+  return (
+    <div className="App">
+     <header>Meu cadastro de pets</header>
+     <form>
+      <label>
+        Nome do seu Pet
+        <input type="text" />
+      </label>
+      <label>
+        Especie
+        <input type="text" />
+      </label>
+      <label>
+        Raça
+        <input type="text" />
+      </label>
+     </form>
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+export default App;
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4.  Possuir um campo onde será possível inserir a idade do pet em anos (Apenas números);
 
-### Deployment
+```
+import './App.css';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+function App() {
+  return (
+    <div className="App">
+     <header>Meu cadastro de pets</header>
+     <form>
+      <label>
+        Nome do seu Pet
+        <input type="text" />
+      </label>
+      <label>
+        Especie
+        <input type="text" />
+      </label>
+      <label>
+        Raça
+        <input type="text" />
+      </label>
+      <label>
+        Idade
+        <input type="number" />
+      </label>
+     </form>
+    </div>
+  );
+}
 
-### `npm run build` fails to minify
+export default App;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+
+5.  Você deverá realizar toda a gestão de estados da aplicação utilizando uma custom hook;
+
+##### Passo 1 - Vamos criar uma custom hook chamada useLocalStorage, no próximo requisito, além dela fazer a gestão dos estados da aplicação, também irá manipular o _localStorage_:
+  
+```
+import { useState } from 'react';
+
+const useLocalStorage = (initialState) => {
+  const [state, setState] = useState(initialState);
+
+
+  return [state, setState];
+}
+
+export default useLocalStorage;
+```
+
+#### Paso 2 - Agora que você criou a custom hook, você precisará importar ela no _App.js_ e realizar a vínculação dela com os campos de inputs, para realizar a vínculação com o input de nome, o código ficará mais ou menos assim:
+```
+import React from 'react';
+import useLocalStorage from './hooks/useLocalStorage';
+import './App.css';
+
+function App() {
+  const [name, setName] = useLocalStorage('');
+
+  return (
+    <div className="App">
+     <header>Meu cadastro de pets</header>
+     <form>
+      <label>
+        Nome do seu Pet
+        <input type="text" value={ name } onChange={ (e) => setName(e.target.value) } />
+      </label>
+      <label>
+        Especie
+        <input type="text" />
+      </label>
+      <label>
+        Raça
+        <input type="text" />
+      </label>
+      <label>
+        Idade
+        <input type="number" />
+      </label>
+     </form>
+    </div>
+  );
+}
+
+export default App;
+
+```
+Observe que foi pasado como _initialState_ (parâmetro) para a nossa hook uma string vazia, evitando que o estado da aplicação seja considerado _undefined_ e possa interferir nos passos mais adiante.
+
+#### Passo 3 - Agora podemos replicar o processo para os outros campo de inputs:
+
+```
+import React from 'react';
+import useLocalStorage from './hooks/useLocalStorage';
+import './App.css';
+
+function App() {
+  const [name, setName] = useLocalStorage('');
+  const [especie, setEspecie] = useLocalStorage('');
+  const [raca, setRaca] = useLocalStorage('');
+  const [idade, setIdade] = useLocalStorage('');
+
+  return (
+    <div className="App">
+     <header>Meu cadastro de pets</header>
+     <form>
+      <label>
+        Nome do seu Pet
+        <input type="text" value={ name } onChange={ (e) => setName(e.target.value) } />
+      </label>
+      <label>
+        Especie
+        <input type="text" value={ especie } onChange={ (e) => setEspecie(e.target.value) } />
+      </label>
+      <label>
+        Raça
+        <input type="text" value={ raca } onChange={ (e) => setRaca(e.target.value) } />
+      </label>
+      <label>
+        Idade
+        <input type="number" value={ idade } onChange={ (e) => setIdade(e.target.value) } />
+      </label>
+     </form>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+6.  Ao recarregar a página, todas as informações preenchidas até o momento deverão aparecer na tela.
+
+#### Passo 1 - Alterar a nossa hook, para que ela receba por parâmetro a key que será utilizada no localStorage
+
+```
+import { useState } from 'react';
+
+const useLocalStorage = (key, initialState) => {
+  const [state, setState] = useState(initialState);
+
+
+  return [state, setState];
+}
+
+export default useLocalStorage;
+```
+#### Passo 2 - criar uma função que leia o localStorage, e caso não haja informação, salve o _initialState_ nele, e caso já exista um valor, retorne o valor salvo.
+
+```
+const getStoredData = (key, initialState = '') => {
+  const storedData = JSON.parse(localStorage.getItem(key));
+  return storedData ? storedData : initialState;  
+};
+```
+
+#### Passo 3 - Agora precisamos utilizar a getStoredData, para manipular o nosso estado.
+
+Você deve se recordar que o _useState_ pode receber uma callback como um de seus argumentos, logo, vamos utilizar a _getStoredData_ como callback dentro do _useState_ substituindo o _initialState_ que já será manipulado por ela.
+
+```
+import { useState } from 'react';
+
+const getStoredData = (key, initialState = '') => {
+  const storedData = JSON.parse(localStorage.getItem(key));
+  return storedData ? storedData : initialState;  
+};
+
+const useLocalStorage = (key, initialState) => {
+  const [state, setState] = useState(() => getStoredData(key, initialState));
+
+
+  return [state, setState];
+};
+
+export default useLocalStorage;
+```
+Com isso a gente garante que, ao carregar nossa página, caso exista algum valor salvo previamente no nosso _localStorage_ ele será mantido e salvo no estado ao invez de ser substituindo, por exemplo, por uma string vazia. Mas observe que ainda não estamos salvando nada no _localStorage_ apenas realizando a leitura dele.
+
+#### Passo 4 - Agora precisamos garantir que toda vez que um input for atualizado, seu valor no _localStorage_ também seja.
+Aqui podemos utilizar uma hook do react, que garante que toda vez que um estado for atualizado ela execute algo. Sabe de qual estamos falando? Isso mesmo é a _useEffect_.
+
+```
+import { useEffect, useState } from 'react';
+
+const getStoredData = (key, initialState = '') => {
+  const storedData = JSON.parse(localStorage.getItem(key));
+  return storedData ? storedData : initialState;  
+};
+
+const useLocalStorage = (key, initialState) => {
+  const [state, setState] = useState(() => getStoredData(key, initialState));
+
+  useEffect(() => {
+    const saveData = JSON.stringify(state);
+    localStorage.setItem(key, saveData);
+  }, [state]);
+
+  return [state, setState];
+};
+
+export default useLocalStorage;
+```
+Então, vamos entender um pouco do que está acontecendo até aqui:
+  1. Ao criar estados utilizando nossa _custom hook_ la no nosso _App.js_, nós passamos para ela como argumento uma _key_ e um valor inicial;
+  2. Esses estados por sua vez, são gerados dentro das nossas hook que como parâmetro inicial, está recebendo uma callback que resgata inforamções do _localStorage_.
+  3. Quando o _localStorage_ não possúi informações, ela retorna uma string vazia dentro de uma key (que nomeamos lá no _App.js_);
+  4. Depois disto, quando qualquer alteração é realizada nos campos de input, através do _onChange_ do mesmo campo, ele assiona uma _setState_ correspondente a aquela utilizada para criar seu estado, fazendo sua alteração para o novo valor.
+  5. A _useEffect_ reconhece através do array de dependências que o estado sofreu alterações e com isto faz a leitura do novo estado e o salva no _localStorage_ na chave (key) corrrespondente.
+
+#### Passo 5 - Agora só falta a gente alterar o arquivo _App.js_ para de fato passar as chaves para nossa hook:
+
+```
+import React from 'react';
+import useLocalStorage from './hooks/useLocalStorage';
+import './App.css';
+
+function App() {
+  const [name, setName] = useLocalStorage('nome', '');
+  const [especie, setEspecie] = useLocalStorage('especie', '');
+  const [raca, setRaca] = useLocalStorage('raca', '');
+  const [idade, setIdade] = useLocalStorage('idade', '');
+
+  return (
+    <div className="App">
+     <header>Meu cadastro de pets</header>
+     <form>
+      <label>
+        Nome do seu Pet
+        <input type="text" value={ name } onChange={ (e) => setName(e.target.value) } />
+      </label>
+      <label>
+        Especie
+        <input type="text" value={ especie } onChange={ (e) => setEspecie(e.target.value) } />
+      </label>
+      <label>
+        Raça
+        <input type="text" value={ raca } onChange={ (e) => setRaca(e.target.value) } />
+      </label>
+      <label>
+        Idade
+        <input type="number" value={ idade } onChange={ (e) => setIdade(e.target.value) } />
+      </label>
+     </form>
+    </div>
+  );
+}
+
+export default App;
+
+```
+  Agora pronto, nossa aplicação está funcionando perfeitamente. Você pode aproveitar para elaborar um _CSS_ bacana e divulgar em suas redes sóciais que agora você além de dominar as _hooks_ do React, você também é mestre na elaboração de suas próprias _custom hooks_.
