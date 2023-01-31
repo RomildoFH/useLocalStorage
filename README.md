@@ -31,7 +31,7 @@ function App() {
      <header>Meu cadastro de pets</header>
     </div>
   );
-}
+};
 
 export default App;
 
@@ -54,7 +54,7 @@ function App() {
      </form>
     </div>
   );
-}
+};
 
 export default App;
 
@@ -81,7 +81,7 @@ function App() {
      </form>
     </div>
   );
-}
+};
 
 export default App;
 
@@ -112,7 +112,7 @@ function App() {
      </form>
     </div>
   );
-}
+};
 
 export default App;
 
@@ -147,7 +147,7 @@ function App() {
      </form>
     </div>
   );
-}
+};
 
 export default App;
 
@@ -185,7 +185,11 @@ function App() {
      <form>
       <label>
         Nome do seu Pet
-        <input type="text" value={ name } onChange={ (e) => setName(e.target.value) } />
+        <input
+          type="text"
+          value={ name }
+          onChange={ (e) => setName(e.target.value) }
+        />
       </label>
       <label>
         Especie
@@ -202,7 +206,7 @@ function App() {
      </form>
     </div>
   );
-}
+};
 
 export default App;
 
@@ -228,24 +232,40 @@ function App() {
      <form>
       <label>
         Nome do seu Pet
-        <input type="text" value={ name } onChange={ (e) => setName(e.target.value) } />
+        <input
+          type="text"
+          value={ name }
+          onChange={ (e) => setName(e.target.value) }
+        />
       </label>
       <label>
         Especie
-        <input type="text" value={ especie } onChange={ (e) => setEspecie(e.target.value) } />
+        <input
+          type="text"
+          value={ especie }
+          onChange={ (e) => setEspecie(e.target.value) }
+        />
       </label>
       <label>
         Raça
-        <input type="text" value={ raca } onChange={ (e) => setRaca(e.target.value) } />
+        <input
+          type="text"
+          value={ raca }
+          onChange={ (e) => setRaca(e.target.value) }
+        />
       </label>
       <label>
         Idade
-        <input type="number" value={ idade } onChange={ (e) => setIdade(e.target.value) } />
+        <input
+          type="number"
+          value={ idade }
+          onChange={ (e) => setIdade(e.target.value) }
+        />
       </label>
      </form>
     </div>
   );
-}
+};
 
 export default App;
 
@@ -263,7 +283,7 @@ const useLocalStorage = (key, initialState) => {
 
 
   return [state, setState];
-}
+};
 
 export default useLocalStorage;
 ```
@@ -349,24 +369,40 @@ function App() {
      <form>
       <label>
         Nome do seu Pet
-        <input type="text" value={ name } onChange={ (e) => setName(e.target.value) } />
+        <input
+          type="text"
+          value={ name }
+          onChange={ (e) => setName(e.target.value) }
+        />
       </label>
       <label>
         Especie
-        <input type="text" value={ especie } onChange={ (e) => setEspecie(e.target.value) } />
+        <input
+          type="text"
+          value={ especie }
+          onChange={ (e) => setEspecie(e.target.value) }
+        />
       </label>
       <label>
         Raça
-        <input type="text" value={ raca } onChange={ (e) => setRaca(e.target.value) } />
+        <input
+          type="text"
+          value={ raca }
+          onChange={ (e) => setRaca(e.target.value) }
+        />
       </label>
       <label>
         Idade
-        <input type="number" value={ idade } onChange={ (e) => setIdade(e.target.value) } />
+        <input
+          type="number"
+          value={ idade }
+          onChange={ (e) => setIdade(e.target.value) }
+        />
       </label>
      </form>
     </div>
   );
-}
+};
 
 export default App;
 
