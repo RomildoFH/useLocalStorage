@@ -371,4 +371,4 @@ function App() {
 export default App;
 
 ```
-  Agora pronto, nossa aplicação está funcionando perfeitamente. Você pode aproveitar para elaborar um _CSS_ bacana e divulgar em suas redes sóciais que agora você além de dominar as _hooks_ do React, você também é um mestre na elaboração de suas próprias _custom hooks_.
+  Agora pronto, nossa aplicação está funcionando perfeitamente. Você pode aproveitar para elaborar um _CSS_ bacana e divulgar em suas redes sóciais que agora você além de dominar as _hooks_ do React, você também é mestre na elaboração de suas próprias _custom hooks_.
